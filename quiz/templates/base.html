@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Merriweather|Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<style type="text/css">
+	body { 
+		padding: 2em;
+		font-family: Merriweather;
+		background-color: #fe9;
+	}
+	h1,h2,h3 {
+		font-family: Oswald;
+	}
+	a { 
+		padding: .5em; 
+		border-radius: 4px; 
+		background: #888;
+		color: #fff;
+		text-decoration: none;
+	}
+	ul { 
+		list-style: none;
+		}
+	.success { 
+		background-color: #2f8; 
+		padding: 1em;
+		width: 50%;
+	}
+	.warning {
+		background-color: #f62; 
+		padding: 1em;
+		width: 50%;
+	}
+</style>
+	{% block head %}
+	{% endblock head %}
+</head>
+<body>
+
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% block body %}
+{% endblock body %}
+</body>
+</html>
